@@ -116,13 +116,22 @@ class MealDetailSCreen extends StatelessWidget {
                 (mediaQuery.size.height - mediaQuery.padding.top) * 0.4,
                 ListView.builder(
                   itemBuilder: (context, index) {
-                    return Container(
-                      margin: EdgeInsets.symmetric(vertical: 10),
-                      child: Text(
-                        "${selectedMeal.ingredients[index]}",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500, fontSize: 18),
-                      ),
+                    return Column(
+                      children: [
+                        Container(
+                          child: ListTile(
+                            leading: Icon(Icons.restaurant, color: Theme.of(context).primaryColor,),
+                            title: Text(
+                              "${selectedMeal.ingredients[index]}",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w500, fontSize: 18),
+                            ),
+                          ),
+                          margin: EdgeInsets.only(top: 5),
+                          padding: EdgeInsets.all(5),
+                        ),
+                        Divider(),
+                      ],
                     );
                   },
                   itemCount: selectedMeal.ingredients.length,
@@ -178,19 +187,23 @@ class MealDetailSCreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return Column(
                           children: [
-                            ListTile(
-                              leading: CircleAvatar(
-                                child: Text(
-                                  '${index + 1}',
-                                  style: TextStyle(
-                                    color: Colors.white,
+                            Container(
+                              margin: EdgeInsets.only(bottom: 10,top: 10),
+                              padding: EdgeInsets.all(5),
+                              child: ListTile(
+                                leading: CircleAvatar(
+                                  child: Text(
+                                    '${index + 1}',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
                                   ),
+                                  backgroundColor: Theme.of(context).primaryColor,
                                 ),
-                                backgroundColor: Theme.of(context).primaryColor,
-                              ),
-                              title: Text(
-                                "${selectedMeal.steps[index]}",
-                                style: TextStyle(color: Colors.black),
+                                title: Text(
+                                  "${selectedMeal.steps[index]}",
+                                  style: TextStyle(color: Colors.black),
+                                ),
                               ),
                             ),
                             Divider(),
