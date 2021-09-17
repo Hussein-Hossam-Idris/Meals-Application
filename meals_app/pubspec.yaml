@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  sliding_up_panel: ^2.0.0+1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -77,17 +78,6 @@ flutter:
           weight: 300
         - asset: assets/fonts/RobotoCondensed-italic.ttf
           style: italic
-  assets:
-    - assets/images/asian.jpg
-    - assets/images/italian.jpg
-    - assets/images/quickandeasy.jpg
-    - assets/images/hamburgers.jpg
-    - assets/images/german.jpg
-    - assets/images/lightandlovely.jpg
-    - assets/images/exotic.jpg
-    - assets/images/breakfast.jpg
-    - assets/images/french.jpg
-    - assets/images/summer.jpg
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
